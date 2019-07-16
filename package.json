@@ -28,6 +28,10 @@
     "test": "nyc npm run test-only",
     "test-only": "mocha test/src/",
     "verify": "npm run check && npm run test",
+    "build": "per-env",
+    "build:production": "webpack --mode production",
+    "build:development": "webpack --mode development",
+    "build:local": "webpack --mode development",
     "start": "node ."
   },
   "husky": {
@@ -36,6 +40,11 @@
     }
   },
   "devDependencies": {
+    "@babel/core": "^7.5.4",
+    "@babel/plugin-transform-runtime": "^7.5.0",
+    "@babel/preset-env": "^7.5.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
     "chai": "^4.2.0",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.3.0",
@@ -45,14 +54,28 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-promise": "^4.1.1",
     "eslint-plugin-standard": "^4.0.0",
+    "extract-loader": "^3.1.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
     "husky": "^2.3.0",
     "mocha": "^6.1.4",
     "node": "^10.9.0",
     "nyc": "^14.1.1",
+    "per-env": "^1.0.2",
     "prettier": "^1.17.1",
     "pretty-quick": "^1.10.0",
     "sinon": "^7.3.2",
-    "sinon-chai": "^3.3.0"
+    "sinon-chai": "^3.3.0",
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.6"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@babel/runtime": "^7.5.4",
+    "axios": "^0.19.0",
+    "eslint-plugin-react": "^7.14.2",
+    "express": "^4.17.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "source-map-support": "^0.5.12"
+  }
 }
